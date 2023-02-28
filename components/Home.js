@@ -6,7 +6,7 @@ const xml= `
 <?xml version="1.0" standalone="no"?>
 
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="50.000000pt" height="50.000000pt" viewBox="0 0 50.000000 50.000000"
+ width="120.000000pt" height="120.000000pt" viewBox="0 0 50.000000 50.000000"
  preserveAspectRatio="xMidYMid meet">
 
 <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
@@ -42,11 +42,17 @@ fill="#B5EB4A" stroke="none">
 `
 
 
-function Home(){
+function Home(props){
     return(
         <View style={styles.container}>
-            <Button title="Book a Wash" color="#B5EB4A"/>
-            <SvgXml xml={xml}/>
+            <Button
+                title="Book a Wash" 
+                color="#B5EB4A"
+                onPress={()=>{props.switchScreen("calendar")}}
+            />
+            <SvgXml 
+                xml={xml}
+            />
         </View>
     );
 }
@@ -55,8 +61,9 @@ const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 10,
         alignItems: "center",
-        gap: 30
-    }
+        gap: 60
+    },
+   
 });
 
 export default Home;

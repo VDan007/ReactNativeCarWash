@@ -5,10 +5,12 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 
+
 import FooterNav from "./components/FooterNav.js";
 import Map from "./components/Map.js";
 import User from "./components/User.js";
 import Home from "./components/Home.js";
+import CalendarComp from "./components/Calendar.js";
 
 export default function App() {
 
@@ -43,10 +45,15 @@ export default function App() {
           <Text style={styles.textTitle}>Tétény Carwash</Text>
           <Text style={styles.text}>Your car's favorite place to get clean</Text>
         </View>
-        
-        {screen == "home" && <Home/>}
+       
+        {screen == "home" && <Home
+                                switchScreen={switchScreen}
+                                screen ={screen}
+                             />}
         {screen == "map" && <Map />}
         {screen == "user" && <User />}
+        {screen == "calendar" && <CalendarComp/>}
+        
 
         <FooterNav
           switchScreen={switchScreen}
