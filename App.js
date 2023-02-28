@@ -4,24 +4,28 @@ import {useState} from "react";
 import { StyleSheet, Text, View, Button } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
+
 import FooterNav from "./components/FooterNav.js";
+import Map from "./components/Map.js";
+import User from "./components/User.js";
 
 export default function App() {
 
+  const [screen,setScreen] = useState("home");
+
   const video = require('./assets/heroMovie.mp4');
-  const [mapRegion,setMapRegion] = useState({
-    latitude: 47.40974,
-    longitude: 19.01846,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01
-  });
   
+  function switchScreen(screen){
+    setScreen(screen);
+  }
+  
+  console.log(screen);
 
   return (
     
       
       <View style={styles.container}>
-        <StatusBar style='light'/>
+        <StatusBar style='auto'/>
         <View style={styles.videocontainer}>
           <Video
             style={styles.video}
@@ -38,15 +42,15 @@ export default function App() {
           <Text style={styles.textTitle}>Tétény Carwash</Text>
           <Text style={styles.text}>Your car's favorite place to get clean</Text>
         </View>
-        <Button title="Book an Apointment" color="#B5EB4A"/>
-        <MapView 
-          style={{width: 150, height:150}}
-          initialRegion={mapRegion}
-        >
-          <Marker coordinate={mapRegion}/>
-        </MapView>
+        {screen == "home" && <Button title="Book an Apointment" color="#B5EB4A"/>}
+        
+        {screen == "map" && <Map />}
+        {screen == "user" && <User />}
 
-        <FooterNav/>
+        <FooterNav
+          switchScreen={switchScreen}
+          screen ={screen}
+        />
 
       </View>
     
@@ -96,5 +100,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(0,0,0,0.5)",
     gap: 20,
+  },
+  map:{
+    width: 200,
+    height: 200,
   }
 });
