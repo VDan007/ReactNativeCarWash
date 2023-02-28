@@ -11,10 +11,11 @@ import Map from "./components/Map.js";
 import User from "./components/User.js";
 import Home from "./components/Home.js";
 import CalendarComp from "./components/Calendar.js";
+import Login from "./components/Login.js";
 
 export default function App() {
 
-  const [screen,setScreen] = useState("home");
+  const [screen,setScreen] = useState("login");
 
   const video = require('./assets/heroMovie.mp4');
   
@@ -28,7 +29,7 @@ export default function App() {
     
       
       <View style={styles.container}>
-        <StatusBar style='auto'/>
+        <StatusBar style='light'/>
         <View style={styles.videocontainer}>
           <Video
             style={styles.video}
@@ -56,6 +57,10 @@ export default function App() {
         
 
         <FooterNav
+          switchScreen={switchScreen}
+          screen ={screen}
+        />
+        <Login
           switchScreen={switchScreen}
           screen ={screen}
         />
