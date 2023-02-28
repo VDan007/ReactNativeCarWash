@@ -1,10 +1,8 @@
-import { StyleSheet, Text, View, Button, Modal,SafeAreaView } from 'react-native';
+import { StyleSheet, View, } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {useState} from "react";
 
-import FooterNav from './FooterNav';
-
-function Map(props){
+function Map(){
     const [mapRegion,setMapRegion] = useState({
         latitude: 47.40974,
         longitude: 19.01846,
@@ -13,7 +11,6 @@ function Map(props){
       });
 
     return(
-        
             <View style={styles.container}>
                 <MapView 
                 style={{width: "100%", height:"100%"}}
@@ -21,11 +18,8 @@ function Map(props){
                 >
                 <Marker coordinate={mapRegion}/>
                 </MapView>
-                
             </View>
-        
-    );
-    
+    );  
 }
 
 const styles = StyleSheet.create({

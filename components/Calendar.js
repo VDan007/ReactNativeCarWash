@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Pressable,Button } from 'react-native';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import { StyleSheet, View, } from 'react-native';
+import {Calendar,} from 'react-native-calendars';
 
 function CalendarComp(){
     return(
@@ -17,10 +17,9 @@ function CalendarComp(){
                     textSectionTitleDisabledColor: '#B5EB4A',
                     monthTextColor: '#B5EB4A',
                     arrowColor: "#B5EB4A",
-
                 }}
             />
-            <Button title="Close"/>
+           
         </View>
     );
 }
@@ -29,7 +28,6 @@ const styles = StyleSheet.create({
     calendarContainer:{
         width: "100%",
         height: "100%",
-        
     }
 });
 

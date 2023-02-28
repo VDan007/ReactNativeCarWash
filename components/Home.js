@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
-import * as Svg from 'react-native-svg';
+import { StyleSheet, View, Button } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 const xml= `

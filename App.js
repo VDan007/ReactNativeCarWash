@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Video } from 'expo-av';
 import {useState} from "react";
-import { StyleSheet, Text, View, Button } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import { StyleSheet, Text, View, } from 'react-native';
+
 
 
 
@@ -23,11 +23,7 @@ export default function App() {
     setScreen(screen);
   }
   
-  
-
   return (
-    
-      
       <View style={styles.container}>
         <StatusBar style='light'/>
         <View style={styles.videocontainer}>
@@ -60,6 +56,7 @@ export default function App() {
           switchScreen={switchScreen}
           screen ={screen}
         />
+
         <Login
           switchScreen={switchScreen}
           screen ={screen}
@@ -82,20 +79,15 @@ const styles = StyleSheet.create({
   video:{
     width: "100%",
     height: 300,
-    
-
   },
   videocontainer:{
     width: "100%",
     height: 300,
-    
-    
   },
   text:{
     color:"#B5EB4A",
     fontSize: 25,
     textAlign: "center",
-    
   },
   textTitle:{
     color:"#B5EB4A",
@@ -104,7 +96,6 @@ const styles = StyleSheet.create({
     textDecorationLine:'underline',
   },
   heroText:{
-    
     width: "100%",
     height:  300,
     position: "absolute",

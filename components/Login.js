@@ -6,7 +6,6 @@ function Login(props){
         <Modal
             visible={props.screen == "login" ? true : false }
             animationType="none"
-            
         >
             
              <View
